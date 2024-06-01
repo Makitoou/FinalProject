@@ -1,13 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Comfortaa", sans-serif;
+    background: linear-gradient(90deg, rgb(19, 58, 148) 0%, rgb(173, 0, 192) 50%, rgb(213, 61, 61) 100%);
 }
 
 #main {
     width: 100vw;
     height: 100vh;
-    background-color: #BF6B30;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #playfield, #rate, #settings {
@@ -15,18 +21,21 @@ body {
 }
 
 .block {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    border: 1px solid black;
-    padding: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 70vh;
-    width: 50vw;
-    background-color: #00685A;
+    gap: 30px;
+    border-radius: 0.6vh;
+    padding: 40px;
+    min-width: 50vw;
+    background-color: rgba(89, 1, 68, 0.804);
+    color: white;
+    opacity: 1;
+    transition: opacity 300ms ease;
+}
+
+.block.hidden {
+    opacity: 0;
 }
 
 #logo {
@@ -38,21 +47,80 @@ body {
     justify-content: space-between;
     gap: 30px;
     align-items: center;
-    padding-top: 12%;
 }
 
-.buttom button {
-    border: 1px solid black;
-    background: #00A08A;
-    border-radius: 50%;
-    padding: 15px;
-}
 
 .buttom button:nth-child(2) span {
     font-size: 80px;
 }
 
-.buttom button span {
+button {
+    border: none;
+    background: rgba(89, 1, 68, 0.804);
+    border-radius: 50%;
+    padding: 15px;
+}
+
+button span {
     color: #FFAD73;
     font-size: 40px;
+}
+
+#playfield {
+    flex-direction: row;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.data div {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.data p.title {
+    font-size: 24px;
+}
+
+.data p:not(.title) {
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 150px;
+    width: 15vw;
+}
+
+.controls button span {
+    font-size: 40px;
+}
+
+.options{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 25px;
+    gap: 150px;
+    width: 20vw;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    font-size: 30px;
+    border: 2px solid black;
+    padding: 8px;
+    text-align: center;
 }
