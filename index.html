@@ -9,7 +9,7 @@
     <meta name="keywords" content="страница">
     <meta name="author" content="Шестаков Никита">
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/field-style.css">
     <script src="js/script.js"></script>
@@ -19,13 +19,18 @@
     <div id="main">
         <div class="block hidden" id="playfield">
             <div class="controls">
-                <button class="open-menu"><span class="material-symbols-outlined">menu</span></button>
-                <p>
+                <div class="button1">
+                    <button class="open-menu"><span class="material-symbols-outlined">home</span></button>
+                    <button id="refresh-game"><span class="material-symbols-outlined">refresh</span></button>
+                    <button id="theme-switcher"><span class="material-symbols-outlined">contrast</span></button>
+                </div>
+                <p class="text">
                     Управление:<br><br>
                     &#9702;Перевернуть фигуру: &#8593;<br><br>
                     &#9702;Движение влево: &#8592;<br><br>
                     &#9702;Движение вправо: &#8594;<br><br>
                     &#9702;Ускорение падения: &#8595;<br><br>
+                    &#9702;Быстрое падение: пробел<br><br>
                 </p>
             </div>
             <div class="field"></div>
@@ -44,7 +49,7 @@
                 </div>
                 <div class="level">
                     <p class="title">Уровень</p>
-                    <p class="level">0</p>
+                    <p id="level">0</p>
                 </div>
             </div>
         </div>
@@ -52,8 +57,24 @@
             <div id="logo">
                 <h1>Рейтинг</h1>
             </div>
-            <div class="buttom">
-                <button class="open-menu"><span class="material-symbols-outlined">menu</span></button>
+            <div class="button">
+                <button class="open-menu"><span class="material-symbols-outlined">home</span></button>
+                <button id="theme-switcher"><span class="material-symbols-outlined">contrast</span></button>
+            </div>
+            <div class="table-1">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Счет</th>
+                            <th>Линии</th>
+                            <th>Уровень</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
             </div>
         </div>
         <div class="block" id="menu">
@@ -70,13 +91,14 @@
             <div id="logo">
                 <h1>Настройки</h1>
             </div>
-            <div class="buttom">
-                <button class="open-menu"><span class="material-symbols-outlined">menu</span></button>
+            <div class="button">
+                <button class="open-menu"><span class="material-symbols-outlined">home</span></button>
+                <button id="theme-switcher"><span class="material-symbols-outlined">contrast</span></button>
             </div>
             <div class="options">
-                &#9702;Скорость:<br><br>
-                &#9702;Размер поля:<br><br>
-                &#9702;Вкл./выкл. звук:<br><br>
+                Скорость:<br><br>
+                Размер поля:<br><br>
+                Вкл./выкл. звук:<br><br>
             </div>
         </div>
     </div>
