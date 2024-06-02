@@ -5,7 +5,19 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: "Comfortaa", sans-serif;
-    background: linear-gradient(90deg, rgb(19, 58, 148) 0%, rgb(173, 0, 192) 50%, rgb(213, 61, 61) 100%);
+}
+
+.button1 {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+}
+.button {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #main {
@@ -16,7 +28,9 @@ body {
     align-items: center;
 }
 
-#playfield, #rate, #settings {
+#playfield,
+#rate,
+#settings {
     display: none;
 }
 
@@ -29,7 +43,7 @@ body {
     padding: 40px;
     min-width: 50vw;
     background-color: rgba(89, 1, 68, 0.804);
-    color: white;
+    color: #FFAD73;
     opacity: 1;
     transition: opacity 300ms ease;
 }
@@ -45,7 +59,7 @@ body {
 .buttom {
     display: flex;
     justify-content: space-between;
-    gap: 30px;
+    gap: 20px;
     align-items: center;
 }
 
@@ -55,10 +69,11 @@ body {
 }
 
 button {
-    border: none;
-    background: rgba(89, 1, 68, 0.804);
+    border: 1px solid black;
+    background: rgba(56, 1, 43, 0.804);
     border-radius: 50%;
-    padding: 15px;
+    padding: 20px;
+    outline: 0;
 }
 
 button span {
@@ -105,7 +120,7 @@ button span {
     font-size: 40px;
 }
 
-.options{
+.options {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -113,14 +128,21 @@ button span {
     gap: 150px;
     width: 20vw;
 }
+
 table {
     border-collapse: collapse;
     width: 100%;
 }
 
-th, td {
+th,
+td {
+    border-radius: 100px;
     font-size: 30px;
-    border: 2px solid black;
+    border: 1px solid black;
     padding: 8px;
     text-align: center;
+}
+text{
+    font-size: 20px;
+    /* color */
 }
