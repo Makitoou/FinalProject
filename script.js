@@ -1,4 +1,6 @@
 let rate = [];
+// let isGameStopped = false;
+
 
 document.addEventListener("DOMContentLoaded", () => {
   if (localStorage.getItem('theme') == null)
@@ -40,6 +42,26 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 100);
     }, 300);
   });
+
+  document.getElementById("plus1").addEventListener("click", () => {
+    let speed = parseInt(localStorage.getItem("speed") || 600);
+    if(speed == 1500){
+      return;
+    }
+    localStorage.setItem("speed", speed + 150);
+    document.getElementById("speedMinus").textContent = speed + 150;
+  });
+
+  document.getElementById("minus2").addEventListener("click", () => {
+    let speed = parseInt(localStorage.getItem("speed") || 600);
+    if(speed == 0){
+      return;
+    }
+    localStorage.setItem("speed", speed - 150);
+    document.getElementById("speedMinus").textContent = speed - 150;
+  });
+
+  document.getElementById("speedMinus").textContent = localStorage.getItem("speed") || 600;
 
   document.getElementById("open-rate").addEventListener("click", () => {
     document.getElementById("menu").classList.add('hidden');
@@ -85,7 +107,7 @@ function play() {
   grid.style.grid = `repeat(${PLAYFIELD_ROWS}, auto) / repeat(${PLAYFIELD_COLUMNS}, auto)`;
   grid.style.userSelect = 'none';
 
-  let score = 0, lines = 0, level = 0;
+  let score = 0, lines = 0;
   const TETROMINO_NAMES = ['I', 'J', 'L', 'O', 'S', 'Z', 'T'];
   const TETROMINOES = {
     'I': [
@@ -147,17 +169,26 @@ function play() {
   }
 
   const SAD = [
-    [0, 0, 1, 0, 0, 0, 0, 1, 0, 0],
-    [0, 1, 0, 0, 0, 0, 0, 0, 1, 0],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-    [0, 0, 1, 0, 0, 0, 0, 1, 0, 0],
-    [0, 1, 1, 0, 0, 0, 0, 1, 1, 0],
-    [0, 1, 1, 0, 0, 0, 0, 1, 1, 0],
+    [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 1, 1, 1, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 1, 1, 1, 0, 0, 0],
+    [0, 0, 0, 0, 1, 0, 1, 0, 0, 0],
+    [0, 0, 0, 0, 1, 1, 1, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 1, 1, 1, 1, 0, 0, 0],
-    [0, 0, 1, 0, 0, 0, 0, 1, 0, 0],
-    [0, 1, 0, 0, 0, 0, 0, 0, 1, 0],
+    [0, 0, 0, 0, 1, 1, 1, 0, 0, 0],
+    [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 1, 1, 1, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+    [0, 0, 0, 0, 1, 1, 1, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 1, 1, 1, 0, 0, 0],
+    [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 1, 1, 0, 0, 0, 0],
+    [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 1, 1, 1, 0, 0, 0]
   ];
 
   class Tetris {
@@ -269,12 +300,12 @@ function play() {
           if (this.isOutsideOfTopBoard(row)) {
             this.isGameOver = true;
             if (rate.length < 5) {
-              rate.push({ points: score, line: lines});
+              rate.push({ points: score, line: lines });
               rate.sort((a, b) => b.line - a.line);
               rate.reverse();
             }
             else {
-              rate.push({ points: score, line: lines});
+              rate.push({ points: score, line: lines });
               rate.sort((a, b) => b.line - a.line);
               rate.reverse();
               rate.pop;
@@ -291,25 +322,25 @@ function play() {
               let col1 = document.createElement("td");
               let col2 = document.createElement("td");
               let col3 = document.createElement("td");
-              let col4 = document.createElement("td");
+              // let col4 = document.createElement("td");
               col1.textContent = i;
               col2.textContent = rate[j].points;
               col3.textContent = rate[j].line;
-              if(rate[j].line >= 10 && rate[j].line % 10 == 0){
-                col4.textContent = rate[j].line/10;
-              }
-              else{
-                col4.textContent = 0;
-              }
+              // if (rate[j].line >= 10 && rate[j].line % 10 == 0) {
+              //   col4.textContent = rate[j].line / 10;
+              // }
+              // else {
+              //   col4.textContent = 0;
+              // }
               row.appendChild(col1);
               row.appendChild(col2);
               row.appendChild(col3);
-              row.appendChild(col4);
+              // row.appendChild(col4);
               document.querySelector("table tbody").appendChild(row);
             }
             document.getElementById("score").textContent = 0;
             document.getElementById("lines").textContent = 0;
-            document.getElementById("level").textContent = 0;
+            // document.getElementById("level").textContent = 0;
             return;
           }
 
@@ -340,13 +371,13 @@ function play() {
       lines += filledRows.length;
       score += filledRows.length * 100;
 
-      if (lines % 10 === 0 && lines > 0) {
-        level++;
-      }
+      // if (lines % 10 === 0 && lines > 0) {
+      //   level++;
+      // }
 
       document.getElementById("score").textContent = score;
       document.getElementById("lines").textContent = lines;
-      document.getElementById("level").textContent = level;
+      // document.getElementById("level").textContent = level;
       return filledRows;
     };
 
@@ -454,13 +485,28 @@ function play() {
   }
 
   function startLoop() {
-    timeoutId = setTimeout(() => requestId = requestAnimationFrame(moveDown), 700);
+    timeoutId = setTimeout(() => requestId = requestAnimationFrame(moveDown), parseInt(localStorage.getItem("speed") || 600));
   }
 
   function stopLoop() {
     cancelAnimationFrame(requestId);
     clearTimeout(timeoutId);
   }
+
+  // function toggleGameState() {
+  //   if (isGameStopped) {
+  //     startLoop();
+  //     dropDown();
+  //     isGameStopped = false;
+  //   } else {
+  //     stopLoop();
+  //     isGameStopped = true;
+  //   }
+  // }
+
+  // document.getElementById('stop-game').addEventListener('click', function() {
+  //   toggleGameState();
+  //  });
 
   function draw() {
     cells.forEach(cell => cell.removeAttribute('class'));
@@ -509,7 +555,7 @@ function play() {
   }
 
   function drawSad() {
-    const TOP_OFFSET = 5;
+    const TOP_OFFSET = 0;
     for (let row = 0; row < SAD.length; row++) {
       for (let column = 0; column < SAD[0].length; column++) {
         if (!SAD[row][column]) continue;
