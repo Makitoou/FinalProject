@@ -8,6 +8,7 @@
     <meta name="description" content="АШАЛЕТЬ КАКАЯ ВАЖНАЯ СТРАНИЦА">
     <meta name="keywords" content="страница">
     <meta name="author" content="Шестаков Никита">
+    <link rel="shortcut icon" href="img/1.png" />
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="css/style.css">
@@ -21,7 +22,7 @@
             <div class="controls">
                 <div class="button1">
                     <button class="open-menu"><span class="material-symbols-outlined">home</span></button>
-                    <button id="refresh-game"><span class="material-symbols-outlined">refresh</span></button>
+                    <!-- <button id="stop-game"><span class="material-symbols-outlined">pause_circle</span></button> -->
                     <button id="theme-switcher"><span class="material-symbols-outlined">contrast</span></button>
                 </div>
                 <p class="text">
@@ -47,10 +48,6 @@
                     <p class="title">Линии</p>
                     <p id="lines">0</p>
                 </div>
-                <div class="level">
-                    <p class="title">Уровень</p>
-                    <p id="level">0</p>
-                </div>
             </div>
         </div>
         <div class="block hidden" id="rate">
@@ -68,7 +65,6 @@
                             <th>№</th>
                             <th>Счет</th>
                             <th>Линии</th>
-                            <th>Уровень</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -90,15 +86,34 @@
         <div class="block hidden" id="settings">
             <div id="logo">
                 <h1>Настройки</h1>
-            </div>
-            <div class="button">
                 <button class="open-menu"><span class="material-symbols-outlined">home</span></button>
                 <button id="theme-switcher"><span class="material-symbols-outlined">contrast</span></button>
             </div>
-            <div class="options">
-                Скорость:<br><br>
-                Размер поля:<br><br>
-                Вкл./выкл. звук:<br><br>
+            <div class="spisok">
+                <div class="speed">
+                    <p class="text1">Скорость:</p>
+                    <div class="Andrey">
+                        <button id="minus2"><span class="material-symbols-outlined">remove</span></button>
+                        <p id="speedMinus">0</p>
+                        <button id="plus1"><span class="material-symbols-outlined">add</span></button>
+                    </div>
+                </div>
+                <!-- <div class="size">
+                    <p class="text1">Размер поля:</p>
+                    <div class="Ilya">
+                        <button id="minus4"><span class="material-symbols-outlined">remove</span></button>
+                        <p id="sizeMinus">0</p>
+                        <button id="plus3"><span class="material-symbols-outlined">add</span></button>
+                    </div>
+                </div>    
+                <div class="voice">
+                    <p class="text1">Вкл./выкл. звук:</p>
+                    <div class="Petr">
+                        <button id="minus6"><span class="material-symbols-outlined">remove</span></button>
+                        <p id="voiceMinus">0</p>
+                        <button id="plus5"><span class="material-symbols-outlined">add</span></button>
+                    </div>
+                </div> -->
             </div>
         </div>
     </div>
