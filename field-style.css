@@ -6,13 +6,13 @@
 }
 
 body.dark {
-  background: linear-gradient(90deg, rgb(59, 56, 13) 0%, rgb(95, 61, 13) 50%, rgb(78, 15, 15) 100%);
+  background: linear-gradient(90deg, rgb(51, 0, 102) 0%, rgb(102, 51, 153) 50%, rgb(51, 0, 102) 100%);
   color: #ffe7b4;
 }
 
 /* Светлая тема */
 body.light {
-  background: linear-gradient(90deg, rgba(146, 140, 57, 1) 0%, rgba(192, 112, 0, 1) 50%, rgba(147, 0, 0, 1) 100%);
+  background: linear-gradient(90deg, rgba(102, 51, 153, 1) 0%, rgba(153, 102, 255, 1) 50%, rgba(102, 51, 153, 1) 100%);
   color: #3e3e3e;
 }
 
@@ -22,7 +22,7 @@ body {
   align-items: center;
   height: 100vh;
   height: 100svh;
-  background: linear-gradient(90deg, rgba(146, 140, 57, 1) 0%, rgba(192, 112, 0, 1) 50%, rgba(147, 0, 0, 1) 100%);
+  background: linear-gradient(90deg, rgba(102, 51, 153, 1) 0%, rgba(153, 102, 255, 1) 50%, rgba(102, 51, 153, 1) 100%);
   user-select: none;
 }
 
